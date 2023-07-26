@@ -3,16 +3,19 @@
 """
 LIFOCache Class
 
-This class inherits from BaseCaching and implements a caching system using the Last-In-First-Out (LIFO) algorithm.
+This class inherits from BaseCaching and implements a
+caching system using the Last-In-First-Out (LIFO) algorithm.
 """
 
 from base_caching import BaseCaching
+
 
 class LIFOCache(BaseCaching):
     """
     LIFOCache Class
 
-    This class inherits from BaseCaching and implements a caching system using the Last-In-First-Out (LIFO) algorithm.
+    This class inherits from BaseCaching and implements a
+    caching system using the Last-In-First-Out (LIFO) algorithm.
     """
 
     def __init__(self):
@@ -34,7 +37,8 @@ class LIFOCache(BaseCaching):
             # Add the item to the cache dictionary
             self.cache_data[key] = item
 
-            # Check if the number of items in the cache exceeds the maximum limit
+            # Check if the number of items in the
+            # cache exceeds the maximum limit
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 # Retrieve the last item (LIFO) that was put in the cache
                 last_key = list(self.cache_data.keys())[-2]

@@ -3,16 +3,19 @@
 """
 BasicCache Class
 
-This class inherits from BaseCaching and implements a basic caching mechanism using a dictionary.
+This class inherits from BaseCaching and implements a
+basic caching mechanism using a dictionary.
 """
 
 from base_caching import BaseCaching
+
 
 class BasicCache(BaseCaching):
     """
     BasicCache Class
 
-    This class inherits from BaseCaching and implements a basic caching mechanism using a dictionary.
+    This class inherits from BaseCaching and implements a
+    basic caching mechanism using a dictionary.
     """
 
     def __init__(self):

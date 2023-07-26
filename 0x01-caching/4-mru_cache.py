@@ -3,16 +3,19 @@
 """
 MRUCache Class
 
-This class inherits from BaseCaching and implements a caching system using the Most Recently Used (MRU) algorithm.
+This class inherits from BaseCaching and implements a caching system
+using the Most Recently Used (MRU) algorithm.
 """
 
 from base_caching import BaseCaching
+
 
 class MRUCache(BaseCaching):
     """
     MRUCache Class
 
-    This class inherits from BaseCaching and implements a caching system using the Most Recently Used (MRU) algorithm.
+    This class inherits from BaseCaching and implements a caching
+    system using the Most Recently Used (MRU) algorithm.
     """
 
     def __init__(self):
@@ -41,16 +44,19 @@ class MRUCache(BaseCaching):
                 # If it is, remove it from its current position
                 self.mru_list.remove(key)
 
-            # Check if the number of items in the cache exceeds the maximum limit
+            # Check if the number of items in the cache
+            # exceeds the maximum limit
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 if self.mru_list:
-                    # Retrieve the most recently used item (MRU) from the end of the list
+                    # Retrieve the most recently used item (MRU)
+                    # from the end of the list
                     mru_key = self.mru_list.pop()
                     # Remove the MRU item from the cache
                     del self.cache_data[mru_key]
                     print("DISCARD: {}".format(mru_key))
 
-            # Update the MRU list with the most recently used key (move it to the end)
+            # Update the MRU list with the most recently
+            # used key (move it to the end)
             self.mru_list.append(key)
 
     def get(self, key):
@@ -67,7 +73,8 @@ class MRUCache(BaseCaching):
             # Try to get the item from the cache
             item = self.cache_data.get(key, None)
             if item is not None:
-                # Update the MRU list with the most recently used key (move it to the end)
+                # Update the MRU list with the most
+                # recently used key (move it to the end)
                 self.mru_list.remove(key)
                 self.mru_list.append(key)
             return item

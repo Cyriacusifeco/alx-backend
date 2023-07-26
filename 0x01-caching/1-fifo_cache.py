@@ -3,16 +3,19 @@
 """
 FIFOCache Class
 
-This class inherits from BaseCaching and implements a caching system using the First-In-First-Out (FIFO) algorithm.
+This class inherits from BaseCaching and implements a
+caching system using the First-In-First-Out (FIFO) algorithm.
 """
 
 from base_caching import BaseCaching
+
 
 class FIFOCache(BaseCaching):
     """
     FIFOCache Class
 
-    This class inherits from BaseCaching and implements a caching system using the First-In-First-Out (FIFO) algorithm.
+    This class inherits from BaseCaching and implements a
+    caching system using the First-In-First-Out (FIFO) algorithm.
     """
 
     def __init__(self):
@@ -34,7 +37,8 @@ class FIFOCache(BaseCaching):
             # Add the item to the cache dictionary
             self.cache_data[key] = item
 
-            # Check if the number of items in the cache exceeds the maximum limit
+            # Check if the number of items in the
+            # cache exceeds the maximum limit
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 # Retrieve the first item (FIFO) that was put in the cache
                 first_key = next(iter(self.cache_data.keys()))
