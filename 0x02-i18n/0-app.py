@@ -13,6 +13,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index() -> str:
     """
@@ -22,6 +23,7 @@ def index() -> str:
         str: The HTML content to display on the page.
     """
     return render_template('0-index.html')
+
 
 if __name__ == '__main__':
     app.run(port=3000)
