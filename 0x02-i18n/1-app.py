@@ -9,29 +9,28 @@ Usage:
     Run this script to start the Flask app.
 """
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 app = Flask(__name__)
 
-# Instantiate the Babel object and store it in a module-level variable 'babel'
-babel = Babel(app)
 
-
-# Create a Config class with available languages
 class Config:
+    """ configuration class """
     LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
-# Configure the Flask app to use the Config class for configuration
+babel = Babel(app)
 app.config.from_object(Config)
 
 
 @app.route('/')
-def index():
+def home():
     """ Home route """
     return render_template('0-index.html')
 
 
-if __name__ == '__main__':
-    app.run(port=3000)
+if __name__ == "__main__":
+    app.run()
