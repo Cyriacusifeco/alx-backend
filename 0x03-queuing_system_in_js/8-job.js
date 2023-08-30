@@ -27,9 +27,11 @@ function createPushNotificationsJobs(jobs, queue) {
       });
     });
   });
-}
+};
 
-const jobs = [
+module.exports = createPushNotificationsJobs;
+
+/*const jobs = [
   {
     phoneNumber: '4153518780',
     message: 'This is the code 1234 to verify your account'
@@ -41,3 +43,4 @@ const jobs = [
 ];
 
 createPushNotificationsJobs(jobs, queue);
+*/
